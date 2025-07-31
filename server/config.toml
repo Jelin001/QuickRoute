@@ -1,24 +1,41 @@
-# config this file according to your credentials
+# CyberCare Configuration File
+# Update these values according to your environment
 
-[QuickRoute.password]	
-secret = "xN5$2mL@qP7!eW#yT^9uB%8dZ&jC6Q*4R#oKp1^V"
-
-[QuickRoute.jwt]
-secret = "q1W2@r3E#t4Y*u7I8&dZ1$9oX@6P^mN!lK#bC9wQ%rT9zL"
-
-[QuickRoute.db]	
+[cybercare.database]
 host = "localhost"
-username = "root"	
-passsword = "200528100634@Vn"
-database = "QuickRoute"
+username = "root"
+password = "your_password_here"
+database = "cybercare_db"
 port = 3306
 
+[cybercare.jwt]
+secret = "cybercare_jwt_secret_key_change_in_production_2024"
+issuer = "cybercare-system"
+audience = "cybercare-users"
+expiration_time = 86400  # 24 hours in seconds
 
-[QuickRoute.email]	
-server = "smtp.gmail.com"
-username = "hiranyagunawardhane@gmail.com"
-password = "hguy gxbe gxmu dlkb"
+[cybercare.password]
+secret = "cybercare_password_salt_secret_2024"
 
-[QuickRoute.OpenAI]
-API_TOKEN = "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"
-API_URL = "https://api.openai.com/v1/chat/completions"
+[cybercare.email]
+smtp_server = "smtp.gmail.com"
+smtp_port = 587
+username = "your_email@gmail.com"
+password = "your_app_password"
+from_address = "noreply@cybercare.com"
+
+[cybercare.external_apis]
+hibp_api_key = "your_hibp_api_key_here"
+hibp_base_url = "https://haveibeenpwned.com/api/v3"
+virustotal_api_key = "your_virustotal_api_key_here"
+virustotal_base_url = "https://www.virustotal.com/api/v3"
+
+[cybercare.server]
+host = "localhost"
+port = 8080
+cors_allowed_origins = ["http://localhost:3000", "http://localhost:5173"]
+
+[cybercare.cert]
+email = "cert@government.agency"
+export_endpoint = "https://cert.gov/api/threats"
+notification_enabled = true
